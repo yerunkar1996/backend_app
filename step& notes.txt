@@ -1,0 +1,109 @@
+node -v
+npm -v
+npm install express-generator
+npm init
+npm install
+
+npm install express mongoose mysql2 
+
+npm install -g nodemon
+
+npm start
+
+
+1)  Template Engine
+I.      npm install ejs
+II.     app.set('view engine', 'ejs')
+III.    app.get('/Home', (req,res)=>{
+            res.render('Home')
+        }) 
+        or  (if you have data)
+III.     app.get('/Home', (req,res)=>{
+            res.render('Home', {content:"Valerie", title:"Home Page"})
+        })
+
+
+
+//-------- Database Connect  --------------//
+I.  npm install mongoose
+II. database connection:
+            const mongoose = require('mongoose')
+            const compassUrl="mongodb://127.0.0.1:27017/studentDB"
+            mongoose.connect(compassUrl,{
+            useNewUrlParser:true,
+            useUnifiedTopology:true
+        }).then(()=>{
+            console.log("Database connection establish Successfully")
+        }).catch((err)=>{
+            console.log(err)
+        })
+
+III. Create model and Schema
+        const mongoose = require('mongoose')
+        const studentSchema = mongoose.Schema({
+            _id: mongoose.Schema.Types.ObjectId,
+            Name: String,
+            dept: String,
+            mobileNo:Number,
+            Address:String
+        })
+        //mongoDB model
+        module.exports = mongoose.model(studentnames, studentSchema)
+
+
+//--------------------API Creation------------
+const studentModel = require('./Model/studentSchema')
+app.get('/studentNames', (req,res)=>{
+    studentModel.find().then((mongoData)=>{
+        res.send(mongoData)
+    }).catch(err => console.log(err))
+})
+
+
+
+//--------------------Atlas MongoDB Server-----------
+I.  Install mongoose  
+    const mongoose = require('mongoose')
+II.  const AtlasUrl ="mongodb+srv://root:root@cluster0.rjiuf.mongodb.net/AMDB?retryWrites=true&w=majority"
+    mongoose.connect(AtlasUrl,{
+        useNewUrlParser:true,   
+        useUnifiedTopology:true
+    }).then(()=>{
+        console.log("Database connection establish Successfully")
+    }).catch((err)=>{
+        console.log(err)
+    })
+
+
+III. Schema Model
+      //Database Schema
+    const mongoose = require('mongoose')
+
+    const studentSchema = mongoose.Schema({
+        _id: mongoose.Schema.Types.ObjectId,
+        Name: String,
+        dept: String,
+        mobileNo:Number,
+        Address:String
+    })
+    //mongoDB model
+    module.exports = mongoose.model("studentnames",studentSchema)  
+
+
+
+
+//--------------------Database Connection with mysql-----------
+I.      Install mysql  ===  npm i mysql2 ( npm i --save mysql2)
+II.     Connection method--
+            const connection = mysql.createConnection({
+            host : 'localhost',
+            user: 'root',
+            password: 'root',
+            database: "amDB"
+        })
+        if(connection){
+            console.log("Database Mysql Connection establish successfully")
+        }
+        else{
+            console.log("Connection refuse")
+        }

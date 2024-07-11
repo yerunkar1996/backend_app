@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    
+<!-- header -->
+<%- include('./includes/header.ejs') %>
+<br>
+
+    <!-- get Data from API -->
+    <div class="prod">
+        <h2 class="prodCat">Men's clothing</h2>
+        <% data.forEach(element => { %>
+            <% if (element.category === "men's clothing") { %>
+                <div class="card1 box1">
+                    <img src=<%= element.image %> width="200px" height="200px" >
+                    <h2><%= element.title %></h2>
+                    <h4>Rating <%= element.rating.rate %></h4>
+                    <h4>Product Count <%= element.rating.count %></h4>
+                    <button>Buy now</button>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    <br>
+
+        <div class="prod">
+            <h2 class="prodCat">Jewelery</h2>
+            <% data.forEach(element => { %>
+                <% if (element.category === "jewelery") { %>
+                    <div class="card1 box2">
+                        <img src=<%= element.image %> width="200px" height="200px" >
+                        <h2><%= element.title %></h2>
+                        <h4>Rating <%= element.rating.rate %></h4>
+                        <h4>Product Count <%= element.rating.count %></h4>
+                        <button>Buy now</button>
+                    </div>
+                <% } %>
+            <% }) %>
+    </div>
+    <br>
+
+    <div class="prod">
+        <h2 class="prodCat">Electronics</h2>
+        <% data.forEach(element => { %>
+            <% if (element.category === "electronics") { %>
+                <div class="card1 box3">
+                    <img src=<%= element.image %> width="200px" height="200px" >
+                    <h2><%= element.title %></h2>
+                    <h4>Rating <%= element.rating.rate %></h4>
+                    <h4>Product Count <%= element.rating.count %></h4>
+                    <button>Buy now</button>
+                </div>
+            <% } %>
+        <% }) %>
+</div>
+<br>
+
+<div class="prod">
+    <h2 class="prodCat">Women's clothing</h2>
+    <% data.forEach(element => { %>
+        <% if (element.category === "women's clothing") { %>
+            <div class="card1 box4">
+                <img src=<%= element.image %> width="200px" height="200px" >
+                <h2><%= element.title %></h2>
+                <h4>Rating <%= element.rating.rate %></h4>
+                <h4>Product Count <%= element.rating.count %></h4>
+                <button>Buy now</button>
+            </div>
+        <% } %>
+    <% }) %>
+</div>
+
+<%# for(){ %>
+
+<%# } %>
+
+    <%# for( let index of data) { %>
+        <!-- <h2><%# index.title %></h2> -->
+    <%# } %>
+
+    
+    <%# for( let index in data) { %>
+        <!-- <h2><%# index %></h2> -->
+    <%# } %>
+
+    <!-- <%# for(let i=0; i<data.length; i++){%> 
+        <h2><%# i %> <%# data[i].title %></h2>
+    <%# } %> -->
+
+
+
+
+<br>
+    <!-- footer` -->
+    <%- include('./includes/footer.ejs') %>
+
+
+
+
+
+
+
+</div>

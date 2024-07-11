@@ -1,0 +1,32 @@
+<div class="container-fluid">
+<!-- header -->
+<%- include('./includes/header.ejs') %>
+
+<!-- get Data from API -->
+<div class="prod">
+    <% data.forEach(element => { %>
+        <div class="card">
+            <img src=<%= element.image %> width="200px" height="200px" >
+            <h2><%= element.title %></h2>
+            <h4>Rating <%= element.rating.rate %></h4>
+            <h4>Product Count <%= element.rating.count %></h4>
+            <button>Buy now</button>
+        </div>
+    <% }) %>
+   
+</div>
+
+
+
+
+
+<!-- footer` -->
+<%- include('./includes/footer.ejs') %>
+
+
+
+
+
+
+
+</div>

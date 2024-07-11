@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title><%= title  %></title>
+        <style>
+            .layout{
+                display: flex;
+                width: 70%;
+                margin: 30vh auto;
+            }
+            .lay1{
+                width: 50%;
+                padding: 100px;
+                box-sizing: border-box;
+                background: linear-gradient(123deg, blue, purple, violet ) ;
+                font-size: 30px;
+                color: aliceblue;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+
+            }
+            .formElem{
+                width: 40%;
+                text-align: center;
+                border: 2px solid grey;
+                padding: 20px 5px;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+
+            .formElem label{
+                margin-right: 10px;
+            }
+            .formElem input{
+                width: 50%;
+                height: 30px;
+                border-radius: 20px;
+                padding-left: 10px;
+            }
+            button{
+                width: 60%;
+                height: 30px;
+                border-radius: 20px;
+                background-color: salmon;
+                border: none;
+                padding: 10px;
+            }
+        </style>
+    </head>
+<!-- Login Form -->
+<div class="layout">
+    <div class="lay1">
+        <h2>Welcome to my app</h2>
+    </div>
+    <div class="formElem">
+        <h2>Login Form</h2>
+        <form action="">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              </div>
+              <br><br>
+              <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" >
+              </div>
+              <br> <br>
+              <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+</html>
